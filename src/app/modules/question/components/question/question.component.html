@@ -1,0 +1,47 @@
+<div *ngIf="currentQuestion$ | async as currentQuestion; else spinner" class="d-flex align-items-center justify-content-center vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="card mt-5">
+          <div class="card-body">
+            <form [formGroup]="questionForm">
+              <p class="card-text animated fadeIn" [innerHTML]="currentQuestion.question"></p>
+              <div class="list-group">
+                <button *ngFor="let option of currentQuestion.options"
+                        type="button"
+                        class="list-group-item list-group-item-action animated fadeInUp"
+                        [class.success]="questionForm.get('option')?.value === option && (isCorrect | async) === true"
+                        [class.danger]="questionForm.get('option')?.value === option && (isCorrect | async) === false"
+                        [class.active]="questionForm.get('option')?.value === option"
+                        [disabled]="(showNextButton$ | async)"
+                        (click)="setOptionToForm(option)">
+                  {{ option }}
+                </button>
+              </div>
+
+              <div class="text-center mt-4">
+                <button *ngIf="!(showNextButton$ | async)" (click)="isAnswerCorrect(currentQuestion.correct_answer)" class="btn btn-secondary animated fadeInUp btn-answer" [disabled]="!questionForm.get('option')?.value">
+                  Answer
+                </button>
+              </div>
+
+              <div class="text-center px-4 mt-4">
+                <button *ngIf="showNextButton$ | async" (click)="nextQuestion()" class="btn btn-secondary animated fadeInUp btn-next">Next</button>
+              </div>
+
+              <div class="progress mt-4">
+                <div class="progress-bar" role="progressbar" [style.width]="progressPercentage + '%'" [attr.aria-valuenow]="progressPercentage" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+</ng-template>
