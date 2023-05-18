@@ -77,11 +77,4 @@ export class TriviaService {
   getTotalQuestions(): number {
     return this._questionsSubject$.value.length;
   }
-
-  resetVariables(): void {
-    this._questionsSubject$.next([]);
-    this._currentQuestionSubject.next(null);
-    this._currentQuestionIndexSubject$.next(0);
-    this._correctAnswersCount$.next(0);
-  }
 }

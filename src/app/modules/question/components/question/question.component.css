@@ -18,7 +18,7 @@
   background-color: #6c63ff;
 }
 
-.success {
+.success, .correct {
   background-color: #00cc00 !important;
   border-color: #dee2e6 !important;
 }

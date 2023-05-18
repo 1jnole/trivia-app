@@ -13,6 +13,7 @@
                         [class.success]="questionForm.get('option')?.value === option && (isCorrect | async) === true"
                         [class.danger]="questionForm.get('option')?.value === option && (isCorrect | async) === false"
                         [class.active]="questionForm.get('option')?.value === option"
+                        [class.correct]="option === currentQuestion.correct_answer && (isCorrect | async) === false"
                         [disabled]="(showNextButton$ | async)"
                         (click)="setOptionToForm(option)">
                   {{ option }}
