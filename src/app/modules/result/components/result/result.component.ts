@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { TriviaService } from '../../../../core/services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -14,7 +15,7 @@ export class ResultComponent implements OnInit, OnDestroy {
   public totalQuestions!: number;
   private _ngUnsubscribe: Subject<void> = new Subject<void>();
 
-  constructor(private _triviaService: TriviaService) {}
+  constructor(private _triviaService: TriviaService, private router: Router) {}
 
   ngOnInit() {
     this.correctAnswersCount$ = this._triviaService.correctAnswersCount;
@@ -31,5 +32,10 @@ export class ResultComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this._ngUnsubscribe.next();
     this._ngUnsubscribe.complete();
+    this._triviaService.resetVariables();
+  }
+
+  navigateToHome() {
+    this.router.navigate(['home']);
   }
 }

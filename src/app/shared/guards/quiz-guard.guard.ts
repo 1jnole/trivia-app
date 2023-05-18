@@ -26,16 +26,11 @@ export class QuizGuard implements CanActivate {
     | UrlTree {
     const totalQuestions = this.triviaService.getTotalQuestions();
 
-    console.log(totalQuestions);
-
     return this.triviaService.currentQuestionIndex$.pipe(
       map((currentQuestionIndex) => {
-        console.log(currentQuestionIndex);
-        console.log(totalQuestions - 1);
-        console.log(currentQuestionIndex >= totalQuestions - 1);
         if (
           currentQuestionIndex < 0 ||
-          currentQuestionIndex >= totalQuestions - 1
+          currentQuestionIndex >= totalQuestions
         ) {
           this.router.navigate(['/home']);
           return false;

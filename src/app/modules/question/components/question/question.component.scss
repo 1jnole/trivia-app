@@ -5,10 +5,6 @@
   }
 }
 
-
-
-
-
 .card-title {
   color: #6c63ff;
 }
@@ -19,17 +15,17 @@
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.progress-bar{
+.progress-bar {
   background-color: #6c63ff;
 }
 
-.success{
-  background-color: #00cc00 !important ;
+.success {
+  background-color: #00cc00 !important;
   border-color: #dee2e6 !important;
 }
 
-.danger{
-  background-color: #ff0000 !important ;
+.danger {
+  background-color: #ff0000 !important;
   border-color: #dee2e6 !important;
 }
 

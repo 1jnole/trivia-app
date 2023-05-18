@@ -1,27 +1,53 @@
-# TriviaApp
+# 🎮 Trivia App 🎮
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+This is a Trivia Game application built using Angular.
 
-## Development server
+## 🚀 Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+What you need to install the software and how to install them:
 
-## Build
+- Node.js (v18.15.0)
+- npm (v9.5.0)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You can download Node.js from the [official website](https://nodejs.org). npm is included with Node.js.
 
-## Running unit tests
+### Installing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Follow these steps to run this project in your local environment.
 
-## Running end-to-end tests
+1. Firstly, clone the repository to your local machine using git:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ```sh
+    git clone https://github.com/1jnole/trivia-app.git
+    ```
 
-## Further help
+2. Go into the project directory:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ```sh
+    cd trivia-app
+    ```
+
+3. Install the dependencies:
+
+    ```sh
+    npm install
+    ```
+
+4. Now you can run the project with:
+
+    ```sh
+    npm start
+    ```
+
+The application should be running on `http://localhost:4200`.
+
+## 📚 Technologies
+
+The project is created with:
+- [angular](https://angular.io/) version: 16.0.1
+- [bootstrap](https://www.npmjs.com/package/bootstrap) version: 5.2.3
+- [rxjs](https://www.npmjs.com/package/rxjs) version: 7.8.0

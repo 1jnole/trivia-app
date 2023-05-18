@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/home';
 import { QuestionComponent } from './modules/question';
-import { ResultComponent } from './modules/result';
+import { QuizGuard, ResultComponent } from './modules/result';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,7 +13,7 @@ const routes: Routes = [
     },
     component: QuestionComponent
   },
-  { path: 'result', component: ResultComponent },
+  { path: 'result', component: ResultComponent, canActivate: [QuizGuard] },
   { path: '**', redirectTo: 'home' }
 ];
 

@@ -1,24 +1,24 @@
-<div class="container d-flex align-items-center justify-content-center vh-100">
-  <div class="card text-center shadow-lg p-4 bg-white rounded border-0">
+<div class="container-fluid d-flex align-items-center justify-content-center vh-100">
+  <div class="card wider-card text-center shadow-lg p-5 bg-white rounded border-0">
     <div class="card-body">
-      <h1 class="display-4 text-warning mb-4">Game Over!</h1>
-      <h4 class="text-dark mb-4">Here's how you did:</h4>
+      <h1 class="display-3 text-primary mb-5">Game Over!</h1>
+      <h3 class="text-dark mb-5">Here's how you did:</h3>
       <div class="row text-dark">
-        <div class="col-md-6 mb-4">
-          <h2 class="h5">Total Questions</h2>
-          <p class="lead">{{totalQuestions}}</p>
+        <div class="col-lg-6 mb-5">
+          <h1 class="h4">Total Questions</h1>
+          <p class="display-4">{{totalQuestions}}</p>
         </div>
-        <div class="col-md-6 mb-4">
-          <h2 class="h5">Right Answers</h2>
-          <p class="lead">{{correctAnswersCount$ | async}}</p>
+        <div class="col-lg-6 mb-5">
+          <h1 class="h4">Right Answers</h1>
+          <p class="display-4">{{correctAnswersCount$ | async}}</p>
         </div>
       </div>
-      <div class="mb-4">
-        <h2 class="h5 text-dark">Success Rate</h2>
-        <p class="lead">{{successRate$ | async}}%</p>
+      <div class="mb-5">
+        <h1 class="h4 text-dark">Success Rate</h1>
+        <p class="display-4">{{successRate$ | async}}%</p>
       </div>
       <div class="mt-4">
-        <a [routerLink]="'/home'"  routerLinkActive="active" class="btn btn-warning btn-lg text-white">Play Again</a>
+        <a [routerLink]="'/home'"  routerLinkActive="active" class="btn btn-primary btn-lg text-white">Play Again</a>
       </div>
     </div>
   </div>
